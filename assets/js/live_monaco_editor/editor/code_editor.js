@@ -64,7 +64,7 @@ class CodeEditor {
 
       this._onMount.forEach((callback) => callback(monaco))
 
-      this._setScreenDependantEditorOptions()
+      // this._setScreenDependantEditorOptions()
 
       this.standalone_code_editor.addAction({
         contextMenuGroupId: "word-wrapping",
