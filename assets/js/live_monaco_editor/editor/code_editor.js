@@ -64,7 +64,7 @@ class CodeEditor {
 
       this._onMount.forEach((callback) => callback(monaco))
 
-      this._setScreenDependantEditorOptions()
+      // this._setScreenDependantEditorOptions()
 
       this.standalone_code_editor.addAction({
         contextMenuGroupId: "word-wrapping",
@@ -84,21 +84,21 @@ class CodeEditor {
         run: (editor) => editor.updateOptions({ wordWrap: "off" }),
       })
 
-      const resizeObserver = new ResizeObserver((entries) => {
-        entries.forEach(() => {
-          if (this.el.offsetHeight > 0) {
-            this._setScreenDependantEditorOptions()
-            this.standalone_code_editor.layout()
-          }
-        })
-      })
+      // const resizeObserver = new ResizeObserver((entries) => {
+      //   entries.forEach(() => {
+      //     if (this.el.offsetHeight > 0) {
+      //       this._setScreenDependantEditorOptions()
+      //       this.standalone_code_editor.layout()
+      //     }
+      //   })
+      // })
 
-      resizeObserver.observe(this.el)
+      // resizeObserver.observe(this.el)
 
-      this.standalone_code_editor.onDidContentSizeChange(() => {
-        const contentHeight = this.standalone_code_editor.getContentHeight()
-        this.el.style.height = `${contentHeight}px`
-      })
+      // this.standalone_code_editor.onDidContentSizeChange(() => {
+      //   const contentHeight = this.standalone_code_editor.getContentHeight()
+      //   this.el.style.height = `${contentHeight}px`
+      // })
     })
   }
 
